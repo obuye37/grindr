@@ -2,10 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { Socials } from '../data/social'
 
-const styles = {
-    
-}
-
 const SocialLinks = () => {
   return (
     <div className='flex justify-center items-center gap-2'>

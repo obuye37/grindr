@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useEffect, useState, MouseEvent } from "react";  
-import { usePathname } from "next/navigation";
-import useWindowSize from '@rooks/use-window-size'
+import React, { useState, MouseEvent } from "react";  
+// import useWindowSize from '@rooks/use-window-size'
 
 import JoinTG from "@/components/JoinTG";
 import Navigation from "@/components/Navigation";
@@ -17,22 +16,20 @@ import web3Image from '../../assets/web3Image.jpeg'
 
 
 const Index:React.FC = () => { 
-  const windowHeight = useWindowSize()
+  // const windowHeight = useWindowSize()
   const [ activeNav, setActiveNav ] = useState<number>(0)
   const [activeSection, setActiveSection] = useState<string>('');
   const [ pageVisible, setPageVisible] = useState<boolean>(true)
-
-  const path = usePathname()
 
   // const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
 
   
 
-const handleVisible = (sectionId: string) => (event: MouseEvent<HTMLAnchorElement>) =>  {
-  event.preventDefault()
-  setActiveSection(sectionId)
-  setPageVisible(false)
-};
+// const handleVisible = (sectionId: string) => (event: MouseEvent<HTMLAnchorElement>) =>  {
+//   event.preventDefault()
+//   setActiveSection(sectionId)
+//   setPageVisible(false)
+// };
 // console.log('activeSection: ', activeSection)
 const idx = Contents[0].content?.contentTitle
 console.log("idx: ", idx)
@@ -42,8 +39,6 @@ const myStyle = {
   backgroundPosition: '150% 0',
   backgroundRepeat: 'no-repeat',
 }
-
-const error = true
 
   return (
     <>
@@ -65,7 +60,7 @@ const error = true
                     <div className="text-md font-normal text-left text-[#efefef]">{val.subTitle}</div>
                     <div className="text-4xl sm:text-8xl font-[cursive] text-[whitesmoke]" style={{textShadow:'#111a 8px 7px', letterSpacing:'.5rem', WebkitTextStroke:'.3rem'}}>{val.content.contentTitle}</div>
                     <p style={{color: "whitesmoke", width:'60%', lineHeight:'1.5rem', letterSpacing:'.12rem' }}>
-                    Unlock endless opportunities with Grandr—your gateway to the most exciting Web3 projects! Whether you're new to the Web3 grind or a seasoned pro, Grandr has got you. Grind for top-tier tokens, dive into campaigns, and contribute to the future of digital ecosystems. With Grandr, your efforts don’t go unnoticed; you’re at the heart of innovation, driving real impact in the Web3 space. <span style={{color:'#ED2F59', padding: '0 .5rem .2rem'}}>Ready to make your mark? Start grinding today and be part of something big!</span> 
+                    Unlock endless opportunities with Grandr—your gateway to the most exciting Web3 projects! Whether you're new to the Web3 grind or a seasoned pro, Grandr has got you. Grind for top-tier tokens, dive into campaigns, and contribute to the future of digital ecosystems. With Grandr, your efforts don’t go unnoticed; you&apos;re at the heart of innovation, driving real impact in the Web3 space. <span style={{color:'#ED2F59', padding: '0 .5rem .2rem'}}>Ready to make your mark? Start grinding today and be part of something big!</span> 
                     </p>
                   </div>
                    : 

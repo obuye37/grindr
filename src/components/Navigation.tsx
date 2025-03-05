@@ -2,7 +2,6 @@ import React, { Dispatch, SetStateAction, MouseEvent, JSX } from 'react'
 import styles from '../app/styles/page.module.css'
 import Logo from '../assets/grinderLogo.png'
 import Image from "next/image";
-import SignInUp from './member';
 import { Contents } from '@/data/contents';
 import JoinTG from './JoinTG';
 
@@ -16,7 +15,8 @@ interface NavigationProps {
 
 const Navigation = ({data, setActiveNav, setVisibility, setActiveSection, activeNav}: NavigationProps): JSX.Element => {
 
-  const handlePagination = (idx:number)  => (event: MouseEvent<HTMLElement>) => {
+  const handlePagination = (idx:number)  => (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault()
     setVisibility(true)
     setActiveNav(idx)
     setActiveSection("")

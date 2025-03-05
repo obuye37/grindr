@@ -1,6 +1,5 @@
 import React, { JSX } from 'react'
 import Link from 'next/link'
-import { JsxElement } from 'typescript'
 
 const SignUp = ({state} : {state:boolean}): JSX.Element => {
     return (
