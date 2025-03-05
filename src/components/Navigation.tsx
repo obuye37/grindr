@@ -35,7 +35,7 @@ const Navigation = ({data, setActiveNav, setVisibility, setActiveSection, active
       <div style={{display:'flex', textDecoration:'none', cursor:'pointer'}} onClick={handlePagination(0)} >
         <Image alt="logo" src={Logo} width={50} height={50} />
         <div style={{lineHeight:'1.25rem', display:'flex', flexDirection:'column', justifyContent:'center'}}>
-          <div style={{fontSize:'1.5rem', fontFamily:'lato', fontWeight:'bolder', letterSpacing:'.3rem', color:'#eee'}}>GRINDR</div>
+          <div className='text-xl font-[lato] font-bold tracking-[0.3rem] text-[wheat]'>GRINDR</div>
           <small style={{textWrap:'nowrap', color:'#eee', letterSpacing:.7, fontStyle:'italic'}}>Reward for Grinding</small>
         </div>
       </div>

@@ -39,7 +39,7 @@ const Index:React.FC = () => {
       <Navigation data={Contents} setActiveNav={setActiveNav} activeNav={activeNav} setVisibility={setPageVisible} setActiveSection={setActiveSection} />
       <div className="flex" >
         {/* <LeftRightPanes /> */}
-        <div className={`relative h-[100vh] w-full p-[.5rem_auto] sm:p-[1.5rem_auto] ${activeNav == 0 ? `sm:bg-[url('../../assets/web3Image.jpeg')] sm:bg-no-repeat sm:bg-[top_left_150%]` : ""}`} >
+        <div className={`relative h-[100vh] w-full p-[.5rem_auto] sm:p-[1.5rem_auto] ${activeNav == 0 ? `sm:bg-[url('../../assets/web3Image.jpeg')] sm:bg-no-repeat sm:bg-[top_left_150%]` : ""}`}>
         {
           Contents?.map((val, idx) => (
             <div 
@@ -50,10 +50,10 @@ const Index:React.FC = () => {
               className={val.title !== 'Home' ? 
                 `${pageVisible && 'flex'} flex-col items-center justify-center h-full w-full gap-2` : "p-4 sm:p-[1rem_5rem_4rem_5rem] place-self-center gap-2"}>
                   {val.title === 'Home' ? 
-                  <div className="flex gap-2 flex-col">
+                  <div className="flex gap-2 flex-col sm:py-10">
                     <div className="text-xs font-normal text-center text-[#efefef] sm:text-lg sm:text-left">{val.subTitle}</div>
                     <div className="text-7xl tracking-[.2rem] text-center font-extrabold inline-block px-1 -mx-2 font-[lato] bg-gradient-to-tr from-gray-50 via-blue-500 via-80% to-blue-950 text-transparent bg-clip-text sm:text-left sm:text-8xl sm:tracking-[1rem] " style={{textShadow:'#39035ecc 3px 4px 8px'}}>{val.content.contentTitle}</div>
-                    <p className="text-[whitesmoke] w-full text-xs text-center sm:w-[60%] tracking-[.1rem] leading-[1.5rem]  sm:text-lg sm:text-left ">
+                    <p className="text-[whitesmoke] w-full text-sm tracking-wider leading-5 text-justify sm:w-[60%] sm:tracking-[.12rem] sm:leading-[1.7rem]  sm:text-lg sm:text-left ">
                     Unlock endless opportunities with Grandr—your gateway to the most exciting Web3 projects! Whether you&apos;re new to the Web3 grind or a seasoned pro, Grandr has got you. Grind for top-tier tokens, dive into campaigns, and contribute to the future of digital ecosystems. With Grandr, your efforts don’t go unnoticed; you&apos;re at the heart of innovation, driving real impact in the Web3 space. <span style={{color:'#ED2F59', padding: '0 .5rem .2rem'}}>Ready to make your mark? Start grinding today and be part of something big!</span> 
                     </p>
                   </div>
@@ -63,11 +63,11 @@ const Index:React.FC = () => {
                    <div className={val.content.article != "" ? "text-sm px-5 sm:px-48 sm:py-8 sm:text-xl sm:leading-8 leading-5 text-[wheat] text-justify sm:columns-2" : "hidden"}>{val.content.article}</div>
                    </> 
                    }
-                <div className="p-[1rem_0] text-[wheat]">
+                <div className="text-[wheat] py-[1rem] sm:py-0">
                   { val.title === "Home" ? 
-                  <div className="sm:flex flex-col sm:flex-row">
+                  <div className="sm:flex flex-col sm:flex-row sm:items-center">
                     <JoinTG url={val.content.url} content="Get Started"/>
-                    <span className="ml-1.5 text-sm sm:text-md">and Start Earning like a Pro</span>  
+                    <span className="ml-1.5 text-sm sm:text-lg">and Start Earning like a Pro</span>  
                   </div> : val.title === "Socials" && <SocialLinks /> } 
                 </div>
               </div>
