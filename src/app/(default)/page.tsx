@@ -10,10 +10,6 @@ import SocialLinks from "@/components/SocialLinks";
 import { Contents } from "@/data/contents";
 
 
-// const homeTitle = " GRINDR "
-// console.log("web3Image: ", web3Image.src)
-
-
 const Index:React.FC = () => { 
   // const windowHeight = useWindowSize()
   const [ activeNav, setActiveNav ] = useState<number>(0)
@@ -43,20 +39,20 @@ const Index:React.FC = () => {
       <Navigation data={Contents} setActiveNav={setActiveNav} activeNav={activeNav} setVisibility={setPageVisible} setActiveSection={setActiveSection} />
       <div className="flex" >
         {/* <LeftRightPanes /> */}
-        <div className={`relative h-[100vh] w-full p-[.5rem_auto] sm:p-[1.5rem_auto] ${activeNav == 0 ? `sm:bg-[url('../../assets/web3Image.jpeg')] bg-no-repeat bg-[top_left_150%]` : ""}`} >
+        <div className={`relative h-[100vh] w-full p-[.5rem_auto] sm:p-[1.5rem_auto] ${activeNav == 0 ? `sm:bg-[url('../../assets/web3Image.jpeg')] sm:bg-no-repeat sm:bg-[top_left_150%]` : ""}`} >
         {
           Contents?.map((val, idx) => (
             <div 
             key={val.id} 
-            className={ idx === activeNav ? "page active" : "hidden" } 
+            className={ idx === activeNav ? "active" : "hidden" } 
             >
               <div id={val.title} 
               className={val.title !== 'Home' ? 
-                `${pageVisible && 'flex'} flex-col items-center justify-center w-full h-full gap-2`  : "p-4 sm:p-[1rem_5rem_4rem_5rem] place-self-center gap-2"}>
+                `${pageVisible && 'flex'} flex-col items-center justify-center h-full w-full gap-2` : "p-4 sm:p-[1rem_5rem_4rem_5rem] place-self-center gap-2"}>
                   {val.title === 'Home' ? 
                   <div className="flex gap-2 flex-col">
-                    <div className="text-sm font-normal text-center text-[#efefef] sm:text-lg sm:text-left">{val.subTitle}</div>
-                    <div className="text-4xl tracking-[1.2rem] text-center inline-block px-1 -mx-2 font-[cursive] bg-gradient-to-tr from-gray-500 via-blue-500 to-blue-950 text-transparent bg-clip-text sm:text-left sm:text-8xl sm:tracking-[.5rem] " style={{textShadow:'#39035ecc 3px 4px 8px', WebkitTextStroke:'.3rem'}}>{val.content.contentTitle}</div>
+                    <div className="text-xs font-normal text-center text-[#efefef] sm:text-lg sm:text-left">{val.subTitle}</div>
+                    <div className="text-7xl tracking-[.2rem] text-center font-extrabold inline-block px-1 -mx-2 font-[lato] bg-gradient-to-tr from-gray-50 via-blue-500 via-80% to-blue-950 text-transparent bg-clip-text sm:text-left sm:text-8xl sm:tracking-[1rem] " style={{textShadow:'#39035ecc 3px 4px 8px'}}>{val.content.contentTitle}</div>
                     <p className="text-[whitesmoke] w-full text-xs text-center sm:w-[60%] tracking-[.1rem] leading-[1.5rem]  sm:text-lg sm:text-left ">
                     Unlock endless opportunities with Grandr—your gateway to the most exciting Web3 projects! Whether you&apos;re new to the Web3 grind or a seasoned pro, Grandr has got you. Grind for top-tier tokens, dive into campaigns, and contribute to the future of digital ecosystems. With Grandr, your efforts don’t go unnoticed; you&apos;re at the heart of innovation, driving real impact in the Web3 space. <span style={{color:'#ED2F59', padding: '0 .5rem .2rem'}}>Ready to make your mark? Start grinding today and be part of something big!</span> 
                     </p>
@@ -75,8 +71,6 @@ const Index:React.FC = () => {
                   </div> : val.title === "Socials" && <SocialLinks /> } 
                 </div>
               </div>
-
-
               { val.title === 'About' && 
                 Contents?.map((secVal, idx) => (
                     <div

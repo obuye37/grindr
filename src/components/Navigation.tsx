@@ -35,7 +35,7 @@ const Navigation = ({data, setActiveNav, setVisibility, setActiveSection, active
       <div style={{display:'flex', textDecoration:'none', cursor:'pointer'}} onClick={handlePagination(0)} >
         <Image alt="logo" src={Logo} width={50} height={50} />
         <div style={{lineHeight:'1.25rem', display:'flex', flexDirection:'column', justifyContent:'center'}}>
-          <div style={{fontSize:'1.5rem', fontFamily:'cursive', fontWeight:'bolder', letterSpacing:'.3rem', color:'#eee'}}>GRINDR</div>
+          <div style={{fontSize:'1.5rem', fontFamily:'lato', fontWeight:'bolder', letterSpacing:'.3rem', color:'#eee'}}>GRINDR</div>
           <small style={{textWrap:'nowrap', color:'#eee', letterSpacing:.7, fontStyle:'italic'}}>Reward for Grinding</small>
         </div>
       </div>
@@ -55,10 +55,10 @@ const Navigation = ({data, setActiveNav, setVisibility, setActiveSection, active
         </div>
       <div className={styles.navLinks}><JoinTG url="" content='Get Started'/></div> 
       </> : 
-      <div className='flex flex-col gap-1 place-self-center justify-self-end' onClick={()=> setMobile(!mobile)}>
-        <div className='h-[4px] bg-gray-200 w-[30px]'/>
-        <div className='h-[4px] bg-gray-200 w-[30px]'/>
-        <div className='h-[4px] bg-gray-200 w-[30px]'/>
+      <div className='flex flex-col gap-1 place-self-center justify-self-end px-4' onClick={()=> setMobile(!mobile)}>
+        <div className='h-[3px] bg-gray-200 w-[25px]'/>
+        <div className='h-[3px] bg-gray-200 w-[25px]'/>
+        <div className='h-[3px] bg-gray-200 w-[25px]'/>
       </div>}
         <div className={mobile == true ? "absolute animate-in top-[76px] cursor-pointer px-4 w-full h-screen z-40 flex flex-col bg-[#01013bee]": "hidden"}>
           {
