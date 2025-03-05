@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const JoinTG = ({url, content}:{url:string, content?:string}):JSX.Element => {
   return (
-    <Link href={url} target="_blank"  style={{color:'#eee', backgroundColor:'#ED2F59', padding:'.7rem', fontWeight:'bolder', borderRadius:'.5rem', cursor:'pointer', textDecoration:'none'}}>{content} </Link>
+    <Link href={url} target="_blank" className='text-[wheat] bg-[#ED2F59] p-[.7rem] font-black rounded-lg cursor-pointer decoration-0'>{content} </Link>
   )
-}
+} 
 
 export default JoinTG

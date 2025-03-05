@@ -5,10 +5,9 @@ import React, { useState } from "react";
 
 import JoinTG from "@/components/JoinTG";
 import Navigation from "@/components/Navigation";
-import LeftRightPanes from "@/components/LeftRightPanes";
+// import LeftRightPanes from "@/components/LeftRightPanes";
 import SocialLinks from "@/components/SocialLinks";
 import { Contents } from "@/data/contents";
-import web3Image from '../../assets/web3Image.jpeg'
 
 
 // const homeTitle = " GRINDR "
@@ -31,21 +30,20 @@ const Index:React.FC = () => {
 //   setPageVisible(false)
 // };
 // console.log('activeSection: ', activeSection)
-const idx = Contents[0].content?.contentTitle
-console.log("idx: ", idx)
 
-const myStyle = {
-  backgroundImage:`url(${web3Image.src})`,
-  backgroundPosition: '150% 0',
-  backgroundRepeat: 'no-repeat',
-}
+
+// const myStyle = {
+//   backgroundImage:`url(${web3Image.src})`,
+//   backgroundPosition: '150% 0',
+//   backgroundRepeat: 'no-repeat',
+// }
 
   return (
     <>
       <Navigation data={Contents} setActiveNav={setActiveNav} activeNav={activeNav} setVisibility={setPageVisible} setActiveSection={setActiveSection} />
       <div className="flex" >
-        <LeftRightPanes />
-        <div className="pageContainer" style={activeNav == 0  ? myStyle: {}}>
+        {/* <LeftRightPanes /> */}
+        <div className={`relative h-[100vh] w-full p-[.5rem_auto] sm:p-[1.5rem_auto] ${activeNav == 0 ? `sm:bg-[url('../../assets/web3Image.jpeg')] bg-no-repeat bg-[top_left_150%]` : ""}`} >
         {
           Contents?.map((val, idx) => (
             <div 
@@ -54,27 +52,27 @@ const myStyle = {
             >
               <div id={val.title} 
               className={val.title !== 'Home' ? 
-                `${pageVisible && 'flex'} flex-col items-center justify-center w-full h-full gap-2`  : "pt-4 pb-16 pr-20 pl-20 place-self-center gap-2"}>
+                `${pageVisible && 'flex'} flex-col items-center justify-center w-full h-full gap-2`  : "p-4 sm:p-[1rem_5rem_4rem_5rem] place-self-center gap-2"}>
                   {val.title === 'Home' ? 
                   <div className="flex gap-2 flex-col">
-                    <div className="text-md font-normal text-left text-[#efefef]">{val.subTitle}</div>
-                    <div className="text-4xl sm:text-8xl font-[cursive] text-[whitesmoke]" style={{textShadow:'#111a 8px 7px', letterSpacing:'.5rem', WebkitTextStroke:'.3rem'}}>{val.content.contentTitle}</div>
-                    <p style={{color: "whitesmoke", width:'60%', lineHeight:'1.5rem', letterSpacing:'.12rem' }}>
+                    <div className="text-sm font-normal text-center text-[#efefef] sm:text-lg sm:text-left">{val.subTitle}</div>
+                    <div className="text-4xl tracking-[1.2rem] text-center inline-block px-1 -mx-2 font-[cursive] bg-gradient-to-tr from-gray-500 via-blue-500 to-blue-950 text-transparent bg-clip-text sm:text-left sm:text-8xl sm:tracking-[.5rem] " style={{textShadow:'#39035ecc 3px 4px 8px', WebkitTextStroke:'.3rem'}}>{val.content.contentTitle}</div>
+                    <p className="text-[whitesmoke] w-full text-xs text-center sm:w-[60%] tracking-[.1rem] leading-[1.5rem]  sm:text-lg sm:text-left ">
                     Unlock endless opportunities with Grandr—your gateway to the most exciting Web3 projects! Whether you&apos;re new to the Web3 grind or a seasoned pro, Grandr has got you. Grind for top-tier tokens, dive into campaigns, and contribute to the future of digital ecosystems. With Grandr, your efforts don’t go unnoticed; you&apos;re at the heart of innovation, driving real impact in the Web3 space. <span style={{color:'#ED2F59', padding: '0 .5rem .2rem'}}>Ready to make your mark? Start grinding today and be part of something big!</span> 
                     </p>
                   </div>
                    : 
                    <>
-                   <header className="text-7xl font-bold bg-gradient-to-r bg-clip-text from-purple-400 via-blue-800 to-purple-950 inline-block h-20 text-transparent">{val.title}</header>
-                   <div className={val.content.article != "" ? "sm:px-48 sm:py-8 sm:text-xl sm:leading-8 leading-5 text-[wheat] px-48 py-8 text-justify text-lg columns-2" : "hidden"}>{val.content.article}</div>
+                   <header className="text-4xl font-bold bg-gradient-to-r bg-clip-text from-purple-400 via-blue-800 to-purple-950 inline-block h-20 text-transparent sm:text-7xl">{val.title}</header>
+                   <div className={val.content.article != "" ? "text-sm px-5 sm:px-48 sm:py-8 sm:text-xl sm:leading-8 leading-5 text-[wheat] text-justify sm:columns-2" : "hidden"}>{val.content.article}</div>
                    </> 
                    }
                 <div className="p-[1rem_0] text-[wheat]">
                   { val.title === "Home" ? 
-                  <div>
+                  <div className="sm:flex flex-col sm:flex-row">
                     <JoinTG url={val.content.url} content="Get Started"/>
-                    <span style={{marginLeft:'10px'}}>and Start Earning like a Pro</span>  
-                    </div> : val.title === "Socials" && <SocialLinks /> } 
+                    <span className="ml-1.5 text-sm sm:text-md">and Start Earning like a Pro</span>  
+                  </div> : val.title === "Socials" && <SocialLinks /> } 
                 </div>
               </div>
 
