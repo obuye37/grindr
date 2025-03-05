@@ -63,7 +63,7 @@ const Index:React.FC = () => {
                   </div>
                    : 
                    <>
-                   <header className="text-4xl font-bold bg-gradient-to-r bg-clip-text from-purple-400 via-blue-800 to-purple-950 inline-block h-20 text-transparent sm:text-7xl">{val.title}</header>
+                   <header className="text-4xl font-black bg-gradient-to-r bg-clip-text from-purple-400 via-blue-800 to-purple-950 inline-block h-20 text-transparent sm:text-7xl">{val.title}</header>
                    <div className={val.content.article != "" ? "text-sm px-5 sm:px-48 sm:py-8 sm:text-xl sm:leading-8 leading-5 text-[wheat] text-justify sm:columns-2" : "hidden"}>{val.content.article}</div>
                    </> 
                    }
