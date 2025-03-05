@@ -1,0 +1,25 @@
+.loading{
+    width: 80px;
+    aspect-ratio: 1;
+    border: 10px solid #1D2549;
+    background: 
+      radial-gradient(farthest-side,#fff 98%, #1D2549) top,
+      radial-gradient(farthest-side,#fff 98%, #1D2549) top,
+      radial-gradient(farthest-side,#fff 98%, #1D2549) left,
+      radial-gradient(farthest-side,#fff 98%, #1D2549) right,
+      radial-gradient(farthest-side,#fff 98%, #1D2549) bottom,
+      #1D2549;
+    background-size:20px 20px;
+    background-repeat: no-repeat;
+    filter: blur(4px) contrast(10); 
+    animation: loading 2s infinite;
+    z-index: 9999;
+  }
+  @keyframes loading {
+    0%   {background-position:top,top,left,right,bottom}
+    25%  {background-position:right,top,left,right,bottom}
+    50%  {background-position:bottom,top,left,right,bottom}
+    75%  {background-position:left,top,left,right,bottom}
+    100% {background-position:top,top,left,right,bottom}
+  }
+  

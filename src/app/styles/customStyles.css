@@ -1,0 +1,5 @@
+@layer components {
+    .content {
+        @apply sm:px-24 sm:py-6 sm:text-lg sm:leading-6 leading-8 text-[wheat] px-[12rem] py-8 text-center text-xl
+    }
+}

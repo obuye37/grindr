@@ -1,0 +1,210 @@
+.main {
+  min-height:calc(100vh - 10px);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  max-width: 100vw;
+  font-family: lato;
+  line-height: 1.3rem;
+  background-image: url('../../../public/gridBg.webp');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+}
+
+.page {
+  color: #222111;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 10px;
+  z-index: 1000;
+  /* background-image: url('../../assets/web3Image.jpeg');
+  background-repeat: no-repeat;
+  background-position: 140% 0; */
+  height: 100vh;
+}
+
+.active {
+  z-index: 9999;
+  animation-name: showPage;
+  animation-duration: .3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showPage {
+  from {
+    transform: translateY(-10px);
+    filter: blur(5px);
+  }
+  to {
+      transform: translateX(0);
+      filter: blur(0);
+
+    }
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns:25% auto 25%;
+  z-index: 100;
+  padding: 0.8rem 1.2rem;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.navLinks {
+  color: #eee;
+  font-size: 1rem;
+  text-decoration: none;
+  place-self: center flex-end;
+}
+
+.header {
+  color: wheat;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+.desc, .content {
+  color: #222111;
+}
+
+.desc {
+  font-size: 1.rem;
+}
+
+.content {
+  padding: 1.5rem 6rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color:wheat;
+}
+
+.url {
+  text-decoration: none;
+  color:whitesmoke;
+  font-size: 1.2rem
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  gap: .6rem;
+  box-sizing: border-box;
+}
+
+.button {
+  color: #efefef;
+  padding: .65rem 1rem;
+  font-size: .8rem;
+  font-weight: 600;
+  box-shadow: #111 4px 4px 10px;
+  background-color: #01013b;
+  border: .5px #020247 solid;
+  text-decoration: none;
+  cursor: pointer;
+  max-width: 10rem;
+  border-radius: 15%;
+  transition-property: box-shadow;
+  transition-duration: .5s;
+  transition-timing-function: linear;
+}
+
+.button:hover {
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+  box-shadow: none;
+  background-color: #020233;
+  border: .5px rgb(0, 0, 61) solid;
+}
+
+.activeNav {
+  box-shadow: none;
+  background-color: #020233;
+  border: .5px rgb(3, 3, 112) solid;
+}
+
+.sectionNav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+@keyframes showSectionNav {
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.navListContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: .6rem;
+  z-index: 9999;
+}
+
+.navListContainer a {
+  text-decoration: none;
+  font-family: Roboto;
+  color:#5c0109;
+  font-weight: bolder;
+  cursor: pointer;
+  filter: blur(20px);
+  animation-name: showSectionNav;
+  animation-duration: 0.4s;
+  animation-delay: .1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.pageContainer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 1.5rem auto,
+}
+.activeSection {
+  padding: 0;
+  margin: 0;
+  animation-name: secVisible;
+  animation-delay: 0.2s; 
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count:  1;
+  animation-fill-mode: forwards;
+  transform: translateY(25px);
+}
+
+@keyframes secVisible {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.bannerPerson {
+  position:absolute;
+  top:0;
+  right:-5%;
+  opacity: .8;
+  z-index: 1;
+  object-fit:scale-down;
+}
+
